@@ -4,11 +4,10 @@
 using Sable.Extensions;
 using Sable.Samples.Core;
 using Marten;
-using Oakton;
-using Weasel.Core;
+using JasperFx;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.ApplyOaktonExtensions();
+builder.Host.ApplyJasperFxExtensions();
 
 builder.Services.AddMartenWithSableSupport(_ =>
 {
@@ -49,4 +48,4 @@ builder.Services.AddMartenStoreWithSableSupport<IOtherDocumentStore>(_ =>
 var app = builder.Build();
 app.MapGet("/", () => "💪🏾");
 
-return await app.RunOaktonCommands(args);
+return await app.RunJasperFxCommands(args);
