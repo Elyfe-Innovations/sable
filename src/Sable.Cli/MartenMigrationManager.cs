@@ -94,7 +94,7 @@ public class MartenMigrationManager : IMartenMigrationManager
         //projectFilePath = projectFilePath.Replace(@"\\", @"\").Replace(@"\", @"\\");
         //migrationFilePath = migrationFilePath.Replace(@"\\", @"\").Replace(@"\", @"\\");
         var patchCommandExecutionResult = await CliWrap.Cli.Wrap("dotnet")
-            .WithArguments(new[] { "run", "--project", projectFilePath, "--", "marten-patch", "--database", $"{databaseName}", migrationFilePath })
+            .WithArguments(new[] { "run", "--project", projectFilePath, "--", "db-patch", "--database", $"{databaseName}", migrationFilePath })
             .WithWorkingDirectory(projectDirectory)
             .WithEnvironmentVariables(new Dictionary<string, string>
             {
