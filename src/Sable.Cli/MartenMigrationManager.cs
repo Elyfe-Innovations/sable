@@ -94,13 +94,15 @@ public class MartenMigrationManager : IMartenMigrationManager
         //projectFilePath = projectFilePath.Replace(@"\\", @"\").Replace(@"\", @"\\");
         //migrationFilePath = migrationFilePath.Replace(@"\\", @"\").Replace(@"\", @"\\");
         var patchCommandExecutionResult = await CliWrap.Cli.Wrap("dotnet")
-            .WithArguments(new[] { "run", "--project", projectFilePath, "--", "db-patch", "--database", $"{databaseName}", migrationFilePath })
+            .WithArguments(new[] { "run", "--project", projectFilePath, "--", "db-patch", "--database", $"marten://{databaseName}", migrationFilePath })
             .WithWorkingDirectory(projectDirectory)
             .WithEnvironmentVariables(new Dictionary<string, string>
             {
                 [SableConstants.ConnectionStringOverride] = postgresContainerOptions.ConnectionString
             })
             .WithValidation(CommandResultValidation.None)
+            .WithStandardOutputPipe(PipeTarget.ToDelegate(line => _consoleLogger.LogInfo(line)))
+            .WithStandardErrorPipe(PipeTarget.ToDelegate(line => _consoleLogger.LogError(line)))
             .ExecuteAsync();
         if (patchCommandExecutionResult.ExitCode != 0)
         {

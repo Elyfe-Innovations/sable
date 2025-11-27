@@ -11,6 +11,6 @@ public static class SableCliConstants
     public const string DirectivePrefix = "-- Sable";
     public const string NoTransactionWrapperDirective = $"{DirectivePrefix} NoTransactionWrapper";
     public const string NoIdempotenceWrapperDirective = $"{DirectivePrefix} NoIdempotenceWrapper";
-    public const string DefaultDatabaseName = "Marten";
+    public const string DefaultDatabaseName = "store";
     public const string DefaultDatabaseSchemaName = "public";
 }
