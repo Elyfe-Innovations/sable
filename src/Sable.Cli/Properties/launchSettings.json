@@ -63,6 +63,20 @@
       "dotnetRunMessages": false,
       "environmentVariables": {
       }
+    },
+    "InitializeTestMigrator": {
+      "commandName": "Project",
+      "commandLineArgs": "init  --project ..\\..\\..\\..\\..\\..\\..\\src\\Hosting\\Tech231.Platform.Database.Migrator\\Tech231.Platform.Database.Migrator.csproj  --schema public ",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
+    },
+    "AddTestMigrationMigrator": {
+      "commandName": "Project",
+      "commandLineArgs": "migrations add Test  --project ..\\..\\..\\..\\..\\..\\..\\src\\Hosting\\Tech231.Platform.Database.Migrator\\Tech231.Platform.Database.Migrator.csproj ",
+      "dotnetRunMessages": false,
+      "environmentVariables": {
+      }
     }
   }
 }
