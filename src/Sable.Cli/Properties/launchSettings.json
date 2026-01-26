@@ -59,10 +59,12 @@
     },
     "UpdateDatabase": {
       "commandName": "Project",
-      "commandLineArgs": "database update  \"Host=localhost;Port=5432;Database=orders;Username=postgres;password=P0stG&e$;SSL Mode=Disable\" --project ..\\..\\..\\..\\..\\samples\\Sable.Samples.GettingStarted\\Sable.Samples.GettingStarted.csproj  ",
+      "commandLineArgs": "database update  \"Host=localhost;Port=44509;Username=postgres;Password=ely#DEV!DB2024;Database=mgrTest;Application Name=TestUssdApp\" ",
       "dotnetRunMessages": false,
+      "workingDirectory": "M:\\source\\Platform\\src\\Hosting\\Tech231.Platform.Database.Migrator",
       "environmentVariables": {
       }
     }
   }
 }
+

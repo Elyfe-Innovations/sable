@@ -11,7 +11,7 @@ BEGIN;
 COMMIT;
 ";
     public const string IdempotentMigrationScriptTemplate = @"
-DO $$
+DO $migrate$
 BEGIN
     IF NOT EXISTS(SELECT 1 FROM  {{DatabaseSchemaName}}.__sable_migrations WHERE migration_id = '{{MigrationId}}') THEN
 
@@ -22,7 +22,7 @@ BEGIN
         INSERT INTO {{DatabaseSchemaName}}.__sable_migrations (migration_id, backfilled)
         VALUES ('{{MigrationId}}', '{{Backfilled}}');
     END IF;
-END $$;
+END $migrate$;
 ";
     public const string IdempotentMigrationRecordInsertionTemplate = @"
 DO $$
