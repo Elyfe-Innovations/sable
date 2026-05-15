@@ -37,10 +37,6 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
-  <ItemGroup Label="Package References">
-    <PackageReference Include="MinVer" PrivateAssets="all" Version="4.2.0" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="all" Version="1.1.1" />
-  </ItemGroup>
 
   <ItemGroup Label="Files">
     <None Include="..\..\images\Icon.png" Pack="true" PackagePath="\" />
